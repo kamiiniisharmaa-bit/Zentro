@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zentro · home</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e1e;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- HEADER / NAV ----- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      border-bottom: 1px solid #eae8e3;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #1a1a1a;
+    }
+    .logo i {
+      color: #b45f3b;
+      margin-right: 6px;
+    }
+    .logo span {
+      font-weight: 300;
+      color: #7a7a7a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      color: #2e2e2e;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #b45f3b;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      font-size: 20px;
+      color: #2e2e2e;
+    }
+    .nav-actions i {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-actions i:hover {
+      color: #b45f3b;
+    }
+
+    /* ----- HERO SECTION (with image) ----- */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 40px 0 56px;
+      background: #f2eee9;
+      border-radius: 32px;
+      padding: 32px 40px;
+      gap: 30px;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+    .hero-text h1 {
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero-text h1 i {
+      color: #b45f3b;
+    }
+    .hero-text p {
+      font-size: 18px;
+      color: #3f3f3f;
+      max-width: 400px;
+      margin-bottom: 28px;
+    }
+    .btn-primary {
+      background: #1e1e1e;
+      color: white;
+      border: none;
+      padding: 14px 38px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+    }
+    .btn-primary:hover {
+      background: #b45f3b;
+    }
+
+    .hero-image {
+      flex: 1 1 280px;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      background: #ddd8d0;
+    }
+
+    /* ----- CATEGORY TILES (images) ----- */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 24px;
+      margin: 40px 0 56px;
+    }
+    .category-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 18px 12px 20px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      border: 1px solid #f0ede8;
+    }
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.04);
+    }
+    .category-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 20px;
+      background: #ece7e0;
+      margin-bottom: 12px;
+    }
+    .category-card h4 {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+    .category-card p {
+      font-size: 14px;
+      color: #6b6b6b;
+    }
+
+    /* ----- FEATURED PRODUCTS (images) ----- */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin: 48px 0 24px;
+    }
+    .section-header h2 {
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+    .section-header a {
+      color: #4d4d4d;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .section-header a:hover {
+      border-color: #b45f3b;
+      color: #b45f3b;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px 20px;
+      margin-bottom: 48px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      padding: 16px 14px 20px;
+      transition: 0.2s;
+      border: 1px solid #f0ede8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .product-card:hover {
+      border-color: #d6cec4;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+    }
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 20px;
+      background: #eae5dd;
+      margin-bottom: 12px;
+    }
+    .product-card .product-name {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+    .product-card .product-price {
+      font-weight: 500;
+      color: #1e1e1e;
+      font-size: 18px;
+    }
+    .product-card .product-price small {
+      font-weight: 400;
+      color: #888;
+      font-size: 14px;
+      margin-left: 6px;
+      text-decoration: line-through;
+    }
+    .product-rating {
+      color: #f3b34b;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin: 6px 0 4px;
+    }
+
+    /* ----- BANNER / PROMO (image) ----- */
+    .promo-banner {
+      background: #e7e0d7;
+      border-radius: 32px;
+      padding: 0 28px 0 40px;
+      margin: 48px 0 60px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 160px;
+    }
+    .promo-banner .promo-text {
+      flex: 2 1 200px;
+      padding: 28px 0;
+    }
+    .promo-banner .promo-text h3 {
+      font-size: 28px;
+      font-weight: 600;
+    }
+    .promo-banner .promo-text p {
+      color: #333;
+      margin: 4px 0 10px;
+    }
+    .promo-banner .promo-image {
+      flex: 1 1 160px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .promo-banner .promo-image img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 28px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+      background: #d0c8bb;
+    }
+
+    /* ----- FOOTER ----- */
+    footer {
+      border-top: 1px solid #eae8e3;
+      padding: 36px 0 28px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 15px;
+      color: #3a3a3a;
+    }
+    footer .footer-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a {
+      text-decoration: none;
+      color: inherit;
+    }
+    footer .footer-links a:hover {
+      color: #b45f3b;
+    }
+    footer .social i {
+      font-size: 20px;
+      margin-left: 18px;
+      color: #3a3a3a;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    footer .social i:hover {
+      color: #b45f3b;
+    }
+
+    /* mobile adjustments */
+    @media (max-width: 680px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .nav-actions {
+        justify-content: center;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        padding: 28px 20px;
+        text-align: center;
+      }
+      .hero-text p {
+        max-width: 100%;
+      }
+      .hero-image img {
+        max-width: 280px;
+      }
+      .promo-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 20px;
+      }
+      .promo-banner .promo-image {
+        justify-content: center;
+        margin-top: 10px;
+      }
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-store-alt"></i> Zentro<span>.</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <!-- HERO with image -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Elevate your <i>everyday</i></h1>
+      <p>Discover timeless design, curated for modern living. New arrivals each week.</p>
+      <button class="btn-primary">Explore collection <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1560243563-062bfc001d68?w=600&h=600&fit=crop&crop=center&auto=format" alt="Zentro hero: modern interior with decor" />
+    </div>
+  </section>
+
+  <!-- CATEGORIES (4 images) -->
+  <div class="category-grid">
+    <div class="category-card">
+      <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=300&h=300&fit=crop&crop=center&auto=format" alt="living room furniture" />
+      <h4>Living</h4>
+      <p>Sofas &amp; more</p>
+    </div>
+    <div class="category-card">
+      <img src="https://images.unsplash.com/photo-1556909212-5c4b8e2b6e2c?w=300&h=300&fit=crop&crop=center&auto=format" alt="bedroom decor" />
+      <h4>Bedroom</h4>
+      <p>Comfort &amp; style</p>
+    </div>
+    <div class="category-card">
+      <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=300&h=300&fit=crop&crop=center&auto=format" alt="dining table setting" />
+      <h4>Dining</h4>
+      <p>Tables &amp; chairs</p>
+    </div>
+    <div class="category-card">
+      <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=300&h=300&fit=crop&crop=center&auto=format" alt="decor accessories" />
+      <h4>Decor</h4>
+      <p>Accents &amp; art</p>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCTS (4 images) -->
+  <div class="section-header">
+    <h2>Best sellers</h2>
+    <a href="#">View all <i class="fas fa-chevron-right" style="font-size: 12px;"></i></a>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop&crop=center&auto=format" alt="Minimalist chair" />
+      <div class="product-name">Luna armchair</div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+      <div class="product-price">$279 <small>$349</small></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&h=400&fit=crop&crop=center&auto=format" alt="Wooden shelf" />
+      <div class="product-name">Shelf &amp; storage</div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="product-price">$189</div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=400&h=400&fit=crop&crop=center&auto=format" alt="Ceramic vase" />
+      <div class="product-name">Stone vase set</div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+      <div class="product-price">$64 <small>$85</small></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=400&h=400&fit=crop&crop=center&auto=format" alt="Table lamp" />
+      <div class="product-name">Pillar lamp</div>
+      <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="product-price">$112</div>
+    </div>
+  </div>
+
+  <!-- PROMO BANNER with image -->
+  <div class="promo-banner">
+    <div class="promo-text">
+      <h3>New collection <i class="fas fa-leaf" style="color: #4d6b4d;"></i></h3>
+      <p>Spring refresh — up to 25% off selected items</p>
+      <button class="btn-primary" style="background: #2b2b2b; padding: 10px 30px; font-size: 14px;">Shop now</button>
+    </div>
+    <div class="promo-image">
+      <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=400&h=400&fit=crop&crop=center&auto=format" alt="decorative objects" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Stores</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+      <a href="#">Sustainability</a>
+    </div>
+    <div class="social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-pinterest"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+    <div style="font-size: 14px; color: #5e5e5e;">&copy; 2026 Zentro · home</div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

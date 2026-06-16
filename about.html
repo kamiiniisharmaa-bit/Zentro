@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zentro · About Us</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- HEADER / NAV (consistent) ----- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      border-bottom: 1px solid #eae8e3;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #1a1a1a;
+    }
+    .logo i {
+      color: #b45f3b;
+      margin-right: 6px;
+    }
+    .logo span {
+      font-weight: 300;
+      color: #7a7a7a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      color: #2e2e2e;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #b45f3b;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      font-size: 20px;
+      color: #2e2e2e;
+    }
+    .nav-actions i {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-actions i:hover {
+      color: #b45f3b;
+    }
+
+    /* ----- ABOUT PAGE SPECIFIC ----- */
+    .about-hero {
+      background: #f2eee9;
+      border-radius: 32px;
+      padding: 48px 40px;
+      margin: 40px 0 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .about-hero-text {
+      flex: 2 1 300px;
+    }
+    .about-hero-text h1 {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .about-hero-text h1 i {
+      color: #b45f3b;
+      margin-right: 10px;
+    }
+    .about-hero-text p {
+      color: #3f3f3f;
+      font-size: 18px;
+      max-width: 600px;
+    }
+    .about-hero-image {
+      flex: 1 1 220px;
+      display: flex;
+      justify-content: center;
+    }
+    .about-hero-image img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 24px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      background: #ddd8d0;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+    }
+
+    .about-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 40px 44px;
+      margin: 20px 0 48px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.02);
+      border: 1px solid #f0ede8;
+    }
+
+    .about-card h2 {
+      font-size: 28px;
+      font-weight: 600;
+      margin: 32px 0 12px;
+      letter-spacing: -0.3px;
+      color: #1a1a1a;
+    }
+    .about-card h2:first-of-type {
+      margin-top: 0;
+    }
+    .about-card h2 i {
+      color: #b45f3b;
+      margin-right: 12px;
+      font-size: 24px;
+      width: 32px;
+    }
+
+    .about-card p {
+      margin-bottom: 16px;
+      color: #2c2c2c;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      margin: 16px 0 20px;
+    }
+    .value-item {
+      background: #f8f6f2;
+      padding: 22px 18px;
+      border-radius: 24px;
+      text-align: center;
+      border: 1px solid #ece8e2;
+      transition: transform 0.2s;
+    }
+    .value-item:hover {
+      transform: translateY(-4px);
+    }
+    .value-item i {
+      font-size: 32px;
+      color: #b45f3b;
+      margin-bottom: 12px;
+    }
+    .value-item h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .value-item p {
+      font-size: 14px;
+      color: #4f4f4f;
+      margin-bottom: 0;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 28px;
+      margin: 16px 0 8px;
+    }
+    .team-member {
+      text-align: center;
+    }
+    .team-member img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #e0dad2;
+      border: 3px solid #f0ede8;
+      max-width: 140px;
+      margin: 0 auto 12px;
+      display: block;
+    }
+    .team-member h4 {
+      font-weight: 600;
+      font-size: 17px;
+    }
+    .team-member p {
+      font-size: 14px;
+      color: #5e5e5e;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 12px 0 8px;
+      color: #3f3f3f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
+    .back-link i {
+      margin-right: 8px;
+    }
+    .back-link:hover {
+      color: #b45f3b;
+      border-bottom-color: #b45f3b;
+    }
+
+    /* ----- FOOTER (consistent) ----- */
+    footer {
+      border-top: 1px solid #eae8e3;
+      padding: 36px 0 28px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 15px;
+      color: #3a3a3a;
+    }
+    footer .footer-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a {
+      text-decoration: none;
+      color: inherit;
+    }
+    footer .footer-links a:hover {
+      color: #b45f3b;
+    }
+    footer .social i {
+      font-size: 20px;
+      margin-left: 18px;
+      color: #3a3a3a;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    footer .social i:hover {
+      color: #b45f3b;
+    }
+
+    /* mobile */
+    @media (max-width: 680px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .nav-actions {
+        justify-content: center;
+      }
+      .about-hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 32px 24px;
+      }
+      .about-hero-text p {
+        max-width: 100%;
+      }
+      .about-card {
+        padding: 28px 20px;
+      }
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER (same as other pages) -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-store-alt"></i> Zentro<span>.</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <!-- ABOUT HERO with image -->
+  <section class="about-hero">
+    <div class="about-hero-text">
+      <h1><i class="fas fa-leaf"></i> About Zentro</h1>
+      <p>We believe that the spaces we inhabit should be a reflection of who we are. Zentro was born from a passion for timeless design, quality craftsmanship, and the simple joy of a well-made object.</p>
+      <p style="margin-top: 10px; font-size: 16px; color: #555;"><i class="fas fa-map-pin" style="color:#b45f3b;"></i> Founded in 2020 · San Francisco, CA</p>
+    </div>
+    <div class="about-hero-image">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=400&fit=crop&crop=center&auto=format" alt="Zentro founders and team" />
+    </div>
+  </section>
+
+  <!-- MAIN ABOUT CONTENT -->
+  <div class="about-card">
+
+    <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+    <p>To curate and create home essentials that blend modern aesthetics with enduring quality. We are dedicated to making design accessible, sustainable, and personal — because your home should feel as unique as you are.</p>
+
+    <h2><i class="fas fa-heart" style="color: #b45f3b;"></i> What We Value</h2>
+    <div class="values-grid">
+      <div class="value-item">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h4>Integrity</h4>
+        <p>Honest sourcing, transparent pricing, and ethical partnerships.</p>
+      </div>
+      <div class="value-item">
+        <i class="fas fa-recycle"></i>
+        <h4>Sustainability</h4>
+        <p>Mindful materials, reduced waste, and a commitment to a better planet.</p>
+      </div>
+      <div class="value-item">
+        <i class="fas fa-paint-brush"></i>
+        <h4>Craftsmanship</h4>
+        <p>Every piece is thoughtfully designed and meticulously made to last.</p>
+      </div>
+      <div class="value-item">
+        <i class="fas fa-users"></i>
+        <h4>Community</h4>
+        <p>We celebrate the people who bring our vision to life — from makers to customers.</p>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-clock"></i> Our Story</h2>
+    <p>Zentro began in a small studio with a simple idea: that the things we surround ourselves with should bring us joy every day. What started as a passion project quickly grew into a curated destination for modern home goods, loved by design enthusiasts and minimalists alike.</p>
+    <p>Today, we collaborate with artisans and designers from around the world, blending traditional techniques with contemporary forms. From furniture to décor, every Zentro piece tells a story of quality, intention, and love for the craft.</p>
+
+    <h2><i class="fas fa-users"></i> Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&auto=format" alt="Elena Rossi" />
+        <h4>Elena Rossi</h4>
+        <p>Founder & Creative Director</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face&auto=format" alt="Marcus Chen" />
+        <h4>Marcus Chen</h4>
+        <p>Head of Design</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=200&h=200&fit=crop&crop=face&auto=format" alt="Sophia Kim" />
+        <h4>Sophia Kim</h4>
+        <p>Operations & Sustainability</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face&auto=format" alt="James Park" />
+        <h4>James Park</h4>
+        <p>Customer Experience Lead</p>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-store"></i> Visit Our Studio</h2>
+    <p>We love welcoming visitors to our San Francisco studio. Browse our collections, meet the team, and experience the Zentro world in person.</p>
+    <p><i class="fas fa-map-marker-alt" style="color:#b45f3b;"></i> 548 Valencia Street, San Francisco, CA 94110</p>
+    <p><i class="fas fa-calendar-alt" style="color:#b45f3b;"></i> Open Mon–Sat 10am – 6pm, Sun by appointment</p>
+
+    <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #eae8e3; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to homepage</a>
+      <span style="color: #6b6b6b; font-size: 15px;">Proudly independent · since 2020</span>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Stores</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+      <a href="#">Sustainability</a>
+    </div>
+    <div class="social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-pinterest"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+    <div style="font-size: 14px; color: #5e5e5e;">&copy; 2026 Zentro · home</div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zentro · Terms & Conditions</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- HEADER / NAV (same as homepage) ----- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      border-bottom: 1px solid #eae8e3;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #1a1a1a;
+    }
+    .logo i {
+      color: #b45f3b;
+      margin-right: 6px;
+    }
+    .logo span {
+      font-weight: 300;
+      color: #7a7a7a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      color: #2e2e2e;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #b45f3b;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      font-size: 20px;
+      color: #2e2e2e;
+    }
+    .nav-actions i {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-actions i:hover {
+      color: #b45f3b;
+    }
+
+    /* ----- TERMS PAGE SPECIFIC ----- */
+    .terms-hero {
+      background: #f2eee9;
+      border-radius: 32px;
+      padding: 48px 40px;
+      margin: 40px 0 32px;
+    }
+    .terms-hero h1 {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .terms-hero h1 i {
+      color: #b45f3b;
+      margin-right: 10px;
+    }
+    .terms-hero p {
+      color: #3f3f3f;
+      font-size: 18px;
+    }
+
+    .terms-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 40px 44px;
+      margin: 20px 0 48px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.02);
+      border: 1px solid #f0ede8;
+    }
+
+    .terms-card h2 {
+      font-size: 26px;
+      font-weight: 600;
+      margin: 28px 0 12px;
+      letter-spacing: -0.3px;
+      color: #1a1a1a;
+    }
+    .terms-card h2:first-of-type {
+      margin-top: 0;
+    }
+    .terms-card h2 i {
+      color: #b45f3b;
+      margin-right: 12px;
+      font-size: 22px;
+      width: 28px;
+    }
+
+    .terms-card p {
+      margin-bottom: 16px;
+      color: #2c2c2c;
+    }
+    .terms-card ul {
+      margin: 8px 0 20px 28px;
+      list-style: disc;
+    }
+    .terms-card ul li {
+      margin-bottom: 8px;
+      color: #2c2c2c;
+    }
+    .terms-card .highlight {
+      background: #f6f3ee;
+      padding: 14px 22px;
+      border-radius: 20px;
+      border-left: 6px solid #b45f3b;
+      margin: 24px 0 12px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 12px 0 8px;
+      color: #3f3f3f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
+    .back-link i {
+      margin-right: 8px;
+    }
+    .back-link:hover {
+      color: #b45f3b;
+      border-bottom-color: #b45f3b;
+    }
+
+    /* ----- FOOTER (same) ----- */
+    footer {
+      border-top: 1px solid #eae8e3;
+      padding: 36px 0 28px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 15px;
+      color: #3a3a3a;
+    }
+    footer .footer-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a {
+      text-decoration: none;
+      color: inherit;
+    }
+    footer .footer-links a:hover {
+      color: #b45f3b;
+    }
+    footer .social i {
+      font-size: 20px;
+      margin-left: 18px;
+      color: #3a3a3a;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    footer .social i:hover {
+      color: #b45f3b;
+    }
+
+    /* mobile */
+    @media (max-width: 680px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .nav-actions {
+        justify-content: center;
+      }
+      .terms-hero {
+        padding: 32px 24px;
+        text-align: center;
+      }
+      .terms-card {
+        padding: 28px 20px;
+      }
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER (same as homepage) -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-store-alt"></i> Zentro<span>.</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <!-- TERMS PAGE CONTENT -->
+  <section class="terms-hero">
+    <h1><i class="fas fa-file-contract"></i> Terms & Conditions</h1>
+    <p>Last updated: June 16, 2026 — please read these terms carefully before using Zentro.</p>
+  </section>
+
+  <div class="terms-card">
+
+    <h2><i class="fas fa-check-circle"></i> 1. General</h2>
+    <p>Welcome to Zentro (“we”, “us”, “our”). By accessing or using our website, you agree to comply with and be bound by the following terms and conditions. If you do not agree with any part of these terms, you must not use our services.</p>
+
+    <h2><i class="fas fa-shopping-bag"></i> 2. Orders & Payments</h2>
+    <ul>
+      <li><strong>Product availability:</strong> All orders are subject to availability. We reserve the right to cancel or refuse any order.</li>
+      <li><strong>Pricing:</strong> Prices are listed in USD and are subject to change without notice. Taxes and shipping are calculated at checkout.</li>
+      <li><strong>Payment:</strong> We accept major credit cards, PayPal, and other payment methods as displayed at checkout.</li>
+    </ul>
+
+    <h2><i class="fas fa-truck"></i> 3. Shipping & Delivery</h2>
+    <p>We aim to process and dispatch orders within 2–3 business days. Delivery times vary by location. You will receive a tracking number once your order is shipped. <br /> For full details, please refer to our <a href="#" style="color: #b45f3b; text-decoration: none; border-bottom: 1px solid #b45f3b;">Shipping Policy</a>.</p>
+
+    <h2><i class="fas fa-undo-alt"></i> 4. Returns & Refunds</h2>
+    <ul>
+      <li>You may return unused items in their original packaging within 30 days of delivery.</li>
+      <li>Refunds will be issued to the original payment method within 5–7 business days after we receive the return.</li>
+      <li>Certain items (e.g., customized or final sale) are non-returnable.</li>
+    </ul>
+
+    <h2><i class="fas fa-shield-alt"></i> 5. User Accounts</h2>
+    <p>You are responsible for maintaining the confidentiality of your account credentials. You agree to notify us immediately of any unauthorized use of your account. We reserve the right to suspend or terminate accounts that violate these terms.</p>
+
+    <div class="highlight">
+      <i class="fas fa-gavel" style="color: #b45f3b; margin-right: 10px;"></i>
+      <strong>Important:</strong> By using Zentro, you accept our <a href="#" style="color: #b45f3b; text-decoration: none; border-bottom: 1px solid #b45f3b;">Privacy Policy</a> and agree to the collection of data as described therein.
+    </div>
+
+    <h2><i class="fas fa-copyright"></i> 6. Intellectual Property</h2>
+    <p>All content on this site — including images, logos, text, and graphics — is the property of Zentro or our licensors. You may not reproduce, distribute, or create derivative works without our prior written consent.</p>
+
+    <h2><i class="fas fa-exclamation-triangle"></i> 7. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, Zentro shall not be liable for any indirect, incidental, or consequential damages arising from the use of our products or website. Our total liability is limited to the purchase price of the item in question.</p>
+
+    <h2><i class="fas fa-scale-balanced"></i> 8. Governing Law</h2>
+    <p>These terms are governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law principles. Any disputes shall be resolved exclusively in the courts of San Francisco, CA.</p>
+
+    <h2><i class="fas fa-envelope"></i> 9. Contact Us</h2>
+    <p>If you have any questions about these Terms & Conditions, please reach out to us at <strong>legal@zentro.com</strong> or through our <a href="#" style="color: #b45f3b; text-decoration: none; border-bottom: 1px solid #b45f3b;">contact page</a>.</p>
+
+    <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid #eae8e3; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to homepage</a>
+      <span style="color: #6b6b6b; font-size: 15px;">Version 2.0 · effective June 2026</span>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Stores</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+      <a href="#">Sustainability</a>
+    </div>
+    <div class="social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-pinterest"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+    <div style="font-size: 14px; color: #5e5e5e;">&copy; 2026 Zentro · home</div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

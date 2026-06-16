@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zentro · Privacy Policy</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- HEADER / NAV (consistent with homepage & terms) ----- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      border-bottom: 1px solid #eae8e3;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #1a1a1a;
+    }
+    .logo i {
+      color: #b45f3b;
+      margin-right: 6px;
+    }
+    .logo span {
+      font-weight: 300;
+      color: #7a7a7a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      color: #2e2e2e;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #b45f3b;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 18px;
+      font-size: 20px;
+      color: #2e2e2e;
+    }
+    .nav-actions i {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-actions i:hover {
+      color: #b45f3b;
+    }
+
+    /* ----- PRIVACY PAGE SPECIFIC ----- */
+    .privacy-hero {
+      background: #f2eee9;
+      border-radius: 32px;
+      padding: 48px 40px;
+      margin: 40px 0 32px;
+    }
+    .privacy-hero h1 {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .privacy-hero h1 i {
+      color: #b45f3b;
+      margin-right: 10px;
+    }
+    .privacy-hero p {
+      color: #3f3f3f;
+      font-size: 18px;
+    }
+
+    .privacy-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 40px 44px;
+      margin: 20px 0 48px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.02);
+      border: 1px solid #f0ede8;
+    }
+
+    .privacy-card h2 {
+      font-size: 26px;
+      font-weight: 600;
+      margin: 32px 0 12px;
+      letter-spacing: -0.3px;
+      color: #1a1a1a;
+    }
+    .privacy-card h2:first-of-type {
+      margin-top: 0;
+    }
+    .privacy-card h2 i {
+      color: #b45f3b;
+      margin-right: 12px;
+      font-size: 22px;
+      width: 28px;
+    }
+
+    .privacy-card p {
+      margin-bottom: 16px;
+      color: #2c2c2c;
+    }
+    .privacy-card ul {
+      margin: 8px 0 20px 28px;
+      list-style: disc;
+    }
+    .privacy-card ul li {
+      margin-bottom: 8px;
+      color: #2c2c2c;
+    }
+    .privacy-card .highlight-box {
+      background: #f6f3ee;
+      padding: 18px 24px;
+      border-radius: 20px;
+      border-left: 6px solid #b45f3b;
+      margin: 24px 0 16px;
+    }
+    .privacy-card .highlight-box i {
+      color: #b45f3b;
+      margin-right: 10px;
+    }
+    .privacy-card .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 30px;
+      margin: 12px 0 20px;
+    }
+    .privacy-card .grid-2col div {
+      background: #f8f6f2;
+      padding: 16px 20px;
+      border-radius: 18px;
+      border: 1px solid #ece8e2;
+    }
+    .privacy-card .grid-2col div strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 12px 0 8px;
+      color: #3f3f3f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
+    .back-link i {
+      margin-right: 8px;
+    }
+    .back-link:hover {
+      color: #b45f3b;
+      border-bottom-color: #b45f3b;
+    }
+
+    /* ----- FOOTER (consistent) ----- */
+    footer {
+      border-top: 1px solid #eae8e3;
+      padding: 36px 0 28px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 15px;
+      color: #3a3a3a;
+    }
+    footer .footer-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a {
+      text-decoration: none;
+      color: inherit;
+    }
+    footer .footer-links a:hover {
+      color: #b45f3b;
+    }
+    footer .social i {
+      font-size: 20px;
+      margin-left: 18px;
+      color: #3a3a3a;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    footer .social i:hover {
+      color: #b45f3b;
+    }
+
+    /* mobile */
+    @media (max-width: 680px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .nav-actions {
+        justify-content: center;
+      }
+      .privacy-hero {
+        padding: 32px 24px;
+        text-align: center;
+      }
+      .privacy-card {
+        padding: 28px 20px;
+      }
+      .privacy-card .grid-2col {
+        grid-template-columns: 1fr;
+      }
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER (same as other pages) -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-store-alt"></i> Zentro<span>.</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <!-- PRIVACY PAGE CONTENT -->
+  <section class="privacy-hero">
+    <h1><i class="fas fa-lock"></i> Privacy Policy</h1>
+    <p>Your privacy matters to us. Learn how Zentro collects, uses, and protects your information.</p>
+  </section>
+
+  <div class="privacy-card">
+
+    <h2><i class="fas fa-info-circle"></i> 1. Information We Collect</h2>
+    <p>We collect information to provide better services to our customers. This includes:</p>
+    <ul>
+      <li><strong>Personal data:</strong> name, email address, phone number, shipping/billing address, and payment details (processed securely via third-party providers).</li>
+      <li><strong>Usage data:</strong> pages visited, products viewed, search queries, and interactions with our site.</li>
+      <li><strong>Device & browser information:</strong> IP address, browser type, operating system, and referral URLs.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <i class="fas fa-shield-alt"></i> <strong>Your trust is our priority.</strong> We never sell or rent your personal information to third parties for marketing purposes.
+    </div>
+
+    <h2><i class="fas fa-database"></i> 2. How We Use Your Data</h2>
+    <div class="grid-2col">
+      <div>
+        <strong><i class="fas fa-box" style="color:#b45f3b; margin-right:6px;"></i> Order processing</strong>
+        Fulfill purchases, send order confirmations, and handle returns.
+      </div>
+      <div>
+        <strong><i class="fas fa-envelope" style="color:#b45f3b; margin-right:6px;"></i> Communication</strong>
+        Respond to inquiries, send service updates, and (with consent) promotional offers.
+      </div>
+      <div>
+        <strong><i class="fas fa-chart-line" style="color:#b45f3b; margin-right:6px;"></i> Improvement</strong>
+        Analyze trends and user behavior to enhance your shopping experience.
+      </div>
+      <div>
+        <strong><i class="fas fa-gavel" style="color:#b45f3b; margin-right:6px;"></i> Legal compliance</strong>
+        Comply with applicable laws, regulations, and enforce our terms.
+      </div>
+    </div>
+
+    <h2><i class="fas fa-cookie-bite"></i> 3. Cookies & Tracking</h2>
+    <p>We use cookies and similar technologies to remember your preferences, understand site usage, and personalize content. You can manage cookie preferences in your browser settings. Essential cookies are required for core functionality (e.g., shopping cart, login).</p>
+
+    <h2><i class="fas fa-share-alt"></i> 4. Data Sharing & Third Parties</h2>
+    <ul>
+      <li><strong>Service providers:</strong> we share data with trusted partners who process payments, ship orders, and provide customer support.</li>
+      <li><strong>Analytics:</strong> we use tools like Google Analytics to understand site performance (anonymized data).</li>
+      <li><strong>Legal obligations:</strong> we may disclose information if required by law or to protect the rights and safety of Zentro and our users.</li>
+    </ul>
+
+    <h2><i class="fas fa-user-shield"></i> 5. Your Rights & Choices</h2>
+    <p>Depending on your location, you may have the right to:</p>
+    <ul>
+      <li>Access, update, or delete your personal data.</li>
+      <li>Opt out of marketing communications at any time (via the “unsubscribe” link in emails).</li>
+      <li>Restrict or object to certain data processing activities.</li>
+    </ul>
+    <p>To exercise these rights, contact us at <strong>privacy@zentro.com</strong>.</p>
+
+    <h2><i class="fas fa-clock"></i> 6. Data Retention</h2>
+    <p>We retain your personal information only as long as necessary to fulfill the purposes outlined in this policy, or as required by law. After that, we securely delete or anonymize your data.</p>
+
+    <h2><i class="fas fa-child"></i> 7. Children's Privacy</h2>
+    <p>Zentro does not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such data, please contact us immediately.</p>
+
+    <h2><i class="fas fa-globe"></i> 8. International Transfers</h2>
+    <p>Your data may be transferred to and processed in countries outside your jurisdiction. We ensure appropriate safeguards are in place, such as standard contractual clauses, to protect your information.</p>
+
+    <h2><i class="fas fa-edit"></i> 9. Policy Updates</h2>
+    <p>We may update this Privacy Policy periodically. The latest version will always be posted on this page with the effective date. We encourage you to review it regularly.</p>
+
+    <h2><i class="fas fa-comment"></i> 10. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please reach out to our Data Protection Officer at:</p>
+    <p style="background: #f6f3ee; padding: 12px 20px; border-radius: 20px; display: inline-block; margin-top: 4px;">
+      <i class="fas fa-envelope" style="color:#b45f3b;"></i> privacy@zentro.com &nbsp;|&nbsp; <i class="fas fa-phone-alt" style="color:#b45f3b;"></i> +1 (800) 555‑ZENTRO
+    </p>
+
+    <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #eae8e3; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to homepage</a>
+      <span style="color: #6b6b6b; font-size: 15px;">Version 3.1 · effective June 16, 2026</span>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Stores</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+      <a href="#">Sustainability</a>
+    </div>
+    <div class="social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-pinterest"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+    <div style="font-size: 14px; color: #5e5e5e;">&copy; 2026 Zentro · home</div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>
